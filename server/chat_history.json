@@ -1,0 +1,38 @@
+[
+  {
+    "user": "Zorro",
+    "text": "i",
+    "type": "text",
+    "timestamp": "10:53 p.m."
+  },
+  {
+    "user": "Águila",
+    "text": "J",
+    "type": "text",
+    "timestamp": "22:53"
+  },
+  {
+    "user": "Tigre",
+    "text": "De",
+    "type": "text",
+    "timestamp": "22:55"
+  },
+  {
+    "user": "León",
+    "text": "hola",
+    "type": "text",
+    "timestamp": "10:57 p.m."
+  },
+  {
+    "user": "Tigre",
+    "text": "Como estas",
+    "type": "text",
+    "timestamp": "22:57"
+  },
+  {
+    "user": "Tigre",
+    "text": "Jajaja",
+    "type": "text",
+    "timestamp": "22:57"
+  }
+]

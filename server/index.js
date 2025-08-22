@@ -10,6 +10,7 @@ const http = require('http');
 console.log('http loaded.');
 
 const { Server } = require('socket.io');
+const fs = require('fs');
 console.log('socket.io loaded.');
 
 const cors = require('cors');
@@ -23,6 +24,19 @@ const server = http.createServer(app);
 console.log('HTTP server created.');
 
 const SECRET_KEY = 'my-super-secret-chat-key';
+const CHAT_HISTORY_FILE = './chat_history.json';
+
+// Cargar el historial de chat o inicializarlo si no existe
+let chatHistory = [];
+try {
+  if (fs.existsSync(CHAT_HISTORY_FILE)) {
+    const data = fs.readFileSync(CHAT_HISTORY_FILE, 'utf8');
+    chatHistory = JSON.parse(data);
+    console.log('Chat history loaded.');
+  }
+} catch (error) {
+  console.error('Error loading chat history:', error);
+}
 
 const io = new Server(server, {
   cors: {
@@ -44,8 +58,15 @@ io.on('connection', (socket) => {
 
   console.log('User authenticated successfully.');
 
+    // Enviar el historial de chat al usuario recién conectado
+    socket.emit('chat history', chatHistory);
+
   socket.on('chat message', (msg) => {
     console.log('Received message:', msg);
+    chatHistory.push(msg);
+    fs.writeFile(CHAT_HISTORY_FILE, JSON.stringify(chatHistory, null, 2), (err) => {
+      if (err) console.error('Error saving chat history:', err);
+    });
     io.emit('chat message', msg);
   });
 
