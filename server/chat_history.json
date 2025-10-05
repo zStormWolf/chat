@@ -34,5 +34,35 @@
     "text": "Jajaja",
     "type": "text",
     "timestamp": "22:57"
+  },
+  {
+    "user": "Zorro",
+    "text": "Como estas",
+    "type": "text",
+    "timestamp": "16:39"
+  },
+  {
+    "user": "León",
+    "text": "bien y tu",
+    "type": "text",
+    "timestamp": "04:39 p.m."
+  },
+  {
+    "user": "Zorro",
+    "text": "Pasandola",
+    "type": "text",
+    "timestamp": "16:39"
+  },
+  {
+    "user": "Lobo",
+    "text": "Hola",
+    "type": "text",
+    "timestamp": "15:16"
+  },
+  {
+    "user": "Oso",
+    "text": "como estas",
+    "type": "text",
+    "timestamp": "03:16 p.m."
   }
 ]

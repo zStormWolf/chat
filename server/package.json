@@ -4,7 +4,9 @@
   "description": "Server for the real-time chat application",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "echo 'No build step required'",
+    "dev": "node index.js"
   },
   "dependencies": {
     "cors": "^2.8.5",

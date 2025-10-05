@@ -78,8 +78,13 @@ io.on('connection', (socket) => {
 const PORT = process.env.PORT || 3001;
 console.log(`Port configured: ${PORT}`);
 
-server.listen(PORT, () => {
-  console.log(`Server is running and listening on port ${PORT}`);
-});
+// Para Vercel, exportamos el servidor como una función
+if (process.env.VERCEL) {
+  module.exports = server;
+} else {
+  server.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server is running and listening on port ${PORT} on all interfaces`);
+  });
+}
 
 console.log('Attempting to start server...');
