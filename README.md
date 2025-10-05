@@ -73,23 +73,25 @@ cd client
 npm start
 ```
 
-## 🌐 Deployment en Vercel
+## 🌐 Deployment en Vercel (Solo Frontend)
 
-### Configuración Automática
+### Configuración
 
 1. **Conectar con GitHub**
    - Sube tu código a GitHub
-   - Conecta tu repositorio con Vercel
+   - En Vercel, conecta el repositorio
+   - **Root Directory**: `client/`
+   - **Framework Preset**: `Create React App`
 
 2. **Variables de Entorno en Vercel**
    ```
-   REACT_APP_SERVER_URL=https://tu-app.vercel.app/api
+   REACT_APP_SERVER_URL=http://TU_IP:3001
    ```
+   (Reemplaza TU_IP con la IP de tu servidor)
 
 3. **Deploy**
-   - Vercel detectará automáticamente la configuración
-   - El frontend se desplegará como sitio estático
-   - El backend se desplegará como funciones serverless
+   - Solo el frontend se desplegará en Vercel
+   - El backend debe ejecutarse en tu servidor local o en otro servicio
 
 ### Configuración Manual
 
