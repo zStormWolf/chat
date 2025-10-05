@@ -64,5 +64,17 @@
     "text": "como estas",
     "type": "text",
     "timestamp": "03:16 p.m."
+  },
+  {
+    "user": "Lobo",
+    "text": "D",
+    "type": "text",
+    "timestamp": "15:36"
+  },
+  {
+    "user": "León",
+    "text": "si",
+    "type": "text",
+    "timestamp": "03:37 p.m."
   }
 ]
