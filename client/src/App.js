@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Box, Button, Input, VStack, HStack, Text, Container, Heading, Flex, IconButton } from '@chakra-ui/react';
 import { IoMdSend, IoMdChatbubbles } from 'react-icons/io';
-import { FiUser, FiMic, FiSquare, FiPlay, FiPause } from 'react-icons/fi';
-import { ReactMediaRecorder } from 'react-media-recorder';
+import { FiUser, FiPlay, FiPause } from 'react-icons/fi';
 import io from 'socket.io-client';
 
 // --- Configuración de Conexión ---
@@ -146,34 +145,7 @@ const MessageBubble = ({ msg }) => {
   );
 };
 
-// --- Componente: Grabador de Voz ---
-const VoiceNoteRecorder = ({ onStop }) => (
-  <ReactMediaRecorder
-    audio
-    onStop={onStop}
-    render={({ status, startRecording, stopRecording }) => (
-      <Box>
-        {status === 'recording' ? (
-          <IconButton
-            icon={<FiSquare />}
-            onClick={stopRecording}
-            aria-label="Stop recording"
-            colorScheme="red"
-            isRound
-          />
-        ) : (
-          <IconButton
-            icon={<FiMic />}
-            onClick={startRecording}
-            aria-label="Start recording"
-            colorScheme="teal"
-            isRound
-          />
-        )}
-      </Box>
-    )}
-  />
-);
+// Componente de grabador de voz removido temporalmente
 
 // --- Componente: Pantalla de Login ---
 const randomNames = ['León', 'Tigre', 'Oso', 'Águila', 'Lobo', 'Zorro'];
@@ -321,25 +293,7 @@ function App() {
     }
   };
 
-  const handleSendAudio = (audioURL, blob) => {
-    if (blob && isLoggedIn) {
-      const message = {
-        user: username,
-        audioBuffer: blob,
-        type: 'audio',
-        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-      };
-
-      const localMessage = {
-        ...message,
-        audioURL: URL.createObjectURL(blob),
-        fromMe: true,
-      };
-      setMessages((prev) => [...prev, localMessage]);
-
-      socket.emit('chat message', message);
-    }
-  };
+  // Función de audio removida temporalmente
 
   if (!isLoggedIn) {
     return <LoginScreen handleLogin={handleLogin} />;
